@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import PublicRoute from "./routes/PublicRoute";
 import LoginPage from "./core/features/auth/pages/LoginPage";
-import UserListPage from "./core/features/user/pages/UserListPage";
+import CustomerListPage from "./core/features/customer/pages/CustomerListPage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
@@ -27,7 +27,7 @@ const App = () => {
             path="/users"
             element={
               <ProtectedRoute>
-                <UserListPage />
+                <CustomerListPage />
               </ProtectedRoute>
             }
           />
