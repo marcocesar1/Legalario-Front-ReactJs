@@ -1,14 +1,15 @@
 import { Navigate } from "react-router-dom";
+import useAuthStore from "../core/features/auth/store/useAuthStore";
+import type { ReactNode } from "react";
 
-const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
-  const user = null;
-  /* const { user, loading } = useAuth();
+interface Props {
+  children: ReactNode;
+}
 
-  if (loading) {
-    return <div>Cargando...</div>;
-  } */
+const ProtectedRoute = ({ children }: Props) => {
+  const authStore = useAuthStore();
 
-  if (!user) {
+  if (!authStore.user) {
     return <Navigate to="/login" replace />;
   }
 
