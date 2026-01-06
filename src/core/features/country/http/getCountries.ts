@@ -1,7 +1,8 @@
 import httpService from "../../../services/httpService";
+import type { Country } from "../country.model";
 
 export interface GetCustomersOutput {
-  data: string[];
+  data: Country[];
 }
 
 export const getCountries = async (): Promise<GetCustomersOutput> => {

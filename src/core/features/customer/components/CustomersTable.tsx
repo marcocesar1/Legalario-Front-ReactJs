@@ -21,7 +21,7 @@ export default function CustomersTable({
     { title: "Nombre", dataIndex: "name", key: "name" },
     { title: "Email", dataIndex: "email", key: "email" },
     { title: "Edad", dataIndex: "age", key: "age" },
-    { title: "País", dataIndex: "country", key: "country" },
+    { title: "País", dataIndex: ["country", "name"], key: "country" },
   ];
 
   const pagination: TablePaginationConfig = {

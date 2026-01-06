@@ -1,10 +1,11 @@
-import { Modal, Form, Input, InputNumber, Button, Alert } from "antd";
+import { Modal, Form, Input, InputNumber, Button, Alert, Select } from "antd";
+import { useCountriesQuery } from "../../country/queries/useCountriesQuery";
 
 export interface CustomerValues {
   name: string;
   email: string;
   age: number;
-  country: string;
+  country_id: string;
 }
 
 interface CustomerModalProps {
@@ -23,6 +24,8 @@ export default function CustomerModal({
   isLoading,
 }: CustomerModalProps) {
   const [form] = Form.useForm<CustomerValues>();
+
+  const query = useCountriesQuery();
 
   const handleFinish = (values: CustomerValues) => {
     onSubmit(values);
@@ -66,21 +69,23 @@ export default function CustomerModal({
           name="age"
           rules={[{ required: true, message: "La edad es obligatoria" }]}
         >
-          <InputNumber min={1} style={{ width: "100%" }} />
+          <InputNumber min={1} max={120} style={{ width: "100%" }} />
         </Form.Item>
 
         <Form.Item
           label="País"
-          name="country"
-          rules={[
-            { required: true, message: "El país es obligatorio" },
-            {
-              len: 3,
-              message: "El país debe tener exactamente 3 caracteres",
-            },
-          ]}
+          name="country_id"
+          rules={[{ required: true, message: "El país es obligatorio" }]}
         >
-          <Input placeholder="Ej: MEX, USA, ESP" />
+          <Select
+            placeholder="País"
+            allowClear
+            options={
+              query.data
+                ? query.data.data.map((c) => ({ value: c.id, label: c.name }))
+                : []
+            }
+          />
         </Form.Item>
 
         {error ? (

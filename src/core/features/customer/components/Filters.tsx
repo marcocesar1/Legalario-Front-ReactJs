@@ -45,7 +45,7 @@ export default function Filters({
           onChange={(value) => onChangeCountry(value)}
           options={
             query.data
-              ? query.data.data.map((c) => ({ value: c, label: c }))
+              ? query.data.data.map((c) => ({ value: c.id, label: c.name }))
               : []
           }
         />
