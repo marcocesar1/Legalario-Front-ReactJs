@@ -6,6 +6,8 @@ import LoginPage from "./core/features/auth/pages/LoginPage";
 import CustomerListPage from "./core/features/customer/pages/CustomerListPage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+import "./App.css";
+
 const queryClient = new QueryClient();
 
 const App = () => {
