@@ -1,4 +1,4 @@
-import { Input, Select, Space, Card, Button } from "antd";
+import { Input, Select, Space, Button } from "antd";
 import useAuthStore from "../../auth/store/useAuthStore";
 import { useCountriesQuery } from "../../country/queries/useCountriesQuery";
 
@@ -20,7 +20,7 @@ export default function Filters({
   const query = useCountriesQuery();
 
   return (
-    <Card title="Usuarios">
+    <>
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
         <Button
           type="default"
@@ -57,6 +57,6 @@ export default function Filters({
           Crear nuevo
         </Button>
       </Space>
-    </Card>
+    </>
   );
 }
