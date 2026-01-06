@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+# 🚀 Proyecto Frontend con Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación frontend construida con **Vite**, diseñada para consumir una API REST.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Requisitos previos
 
-## React Compiler
+Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Node.js v20**
 
-## Expanding the ESLint configuration
+Puedes verificar tu versión ejecutando:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+node -v
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Debería mostrar algo como:
+v20.x.x
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Iniciar el proyecto
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Copia el archivo `.env.example` a `.env`.
+
+```bash
+cp .env.example .env
 ```
+
+Cambia el valor de `VITE_APP_BASE_URL` en `.env` para apuntar a la URL de tu backend.
+
+Una vez clonado, ejecuta el siguiente comando para instalar las dependencias:
+
+```bash
+npm install
+```
+
+Una vez instaladas las dependencias, ejecuta el siguiente comando para iniciar el proyecto:
+
+```bash
+npm run dev
+```
+
+Esto iniciará el servidor de desarrollo y abrirá la aplicación en tu navegador.
+
+## Librerías y herramientas utilizadas
+
+- [Vite](https://vitejs.dev/): Una herramienta de desarrollo front-end rápida y flexible.
+- [React](https://react.dev/): Una biblioteca de JavaScript para construir interfaces de usuario.
+- [Ant Design](https://ant.design/): Una biblioteca de componentes UI de código abierto.
+- [Zustand](https://github.com/pmndrs/zustand): Un manejador de estado de aplicaciones de JavaScript.
+- [TanStack Query](https://tanstack.com/query/latest): Una librería de React para la consulta de datos.
