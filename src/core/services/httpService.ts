@@ -1,5 +1,10 @@
 import axios, { AxiosError } from "axios";
 
+interface ErrorResponse {
+  message?: string;
+  error?: string;
+}
+
 const httpService = axios.create({
   baseURL: import.meta.env.VITE_APP_BASE_URL,
 });
@@ -18,7 +23,7 @@ httpService.interceptors.response.use(
   (response) => {
     return response;
   },
-  (error: AxiosError) => {
+  (error: AxiosError<ErrorResponse>) => {
     const status = error.response?.status;
     const data = error.response?.data;
     const message = data?.message || "Error desconocido";
