@@ -4,7 +4,7 @@ Este proyecto es una aplicación frontend construida con **Vite**, diseñada par
 
 Url de la aplicación en producción:
 
-[https://695c74fdb892be0008a2805a--legalario-front.netlify.app/](https://695c74fdb892be0008a2805a--legalario-front.netlify.app/)
+[https://legalario-front.netlify.app/](https://legalario-front.netlify.app/)
 
 ---
 
