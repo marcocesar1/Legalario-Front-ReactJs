@@ -2,6 +2,10 @@
 
 Este proyecto es una aplicación frontend construida con **Vite**, diseñada para consumir una API REST.
 
+Url de la aplicación en producción:
+
+[https://695c74fdb892be0008a2805a--legalario-front.netlify.app/](https://695c74fdb892be0008a2805a--legalario-front.netlify.app/)
+
 ---
 
 ## 📋 Requisitos previos
