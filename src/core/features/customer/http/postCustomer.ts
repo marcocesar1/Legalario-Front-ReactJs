@@ -4,7 +4,7 @@ import type { Customer } from "../customer.model";
 export interface PostCustomerInput {
   email: string;
   name: string;
-  country: string;
+  country_id: string;
   age: number;
 }
 
